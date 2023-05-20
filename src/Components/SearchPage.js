@@ -46,7 +46,7 @@ export const SearchPage = () => {
                 <Row >
 
                     <Form.Select onChange={handleOnChange}>
-                        <option value=""> Select by code </option>
+                        <option value=""> Select by country code </option>
                         {countryCodeArg.map(itm => (
                             <option key={itm} value={itm}> {itm}</option>
                         ))}
