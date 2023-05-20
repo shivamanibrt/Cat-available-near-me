@@ -1,36 +1,29 @@
 import React from "react";
 
 import { Home } from "./Components/Home";
+import { SearchPage } from "./Components/SearchPage";
 import { Container, Row } from "react-bootstrap";
 import { About } from "./Components/About";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import './App.css';
 
 function App() {
 
   return (
-    <Row className="wrapper bg-dark ">
-      <Container className="p-5 ">
-        <Row className="p-5  wrapper text-center align-item-center d-flex">
-          <Home />
-        </Row>
-      </Container>
-      <About />
-    </Row>
+
+    <div className="wrapper">
+
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </Layout>
+    </div>
   );
 };
 
 export default App;
 
-// import React from 'react';
-// import { Home } from './Praticse/Home';
-// import { CatSearch } from './Praticse/CatSearch';
-// import { About } from './Praticse/About';
-
-// export const App = () => {
-//   return (
-//     <>
-//       <Home />
-//       <CatSearch />
-//       <About />
-//     </>
-//   );
-// };
