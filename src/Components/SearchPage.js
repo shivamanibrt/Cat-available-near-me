@@ -30,7 +30,7 @@ export const SearchPage = () => {
         //used set to remove the repetation for country code
         const countryCodes = new Set();
         cats.forEach((cat) => {
-            countryCodes.add(cat.country_code);
+            countryCodes.add(cat.origin);
         });
         return Array.from(countryCodes);
     };
@@ -52,11 +52,11 @@ export const SearchPage = () => {
                         ))}
                     </Form.Select>
 
-                    <h4 className='mt-4'>There are {cats.filter(cat => cat?.country_code === country).length} cats available in {country}</h4>
+                    <h4 className='mt-4'>There are {cats.filter(cat => cat?.origin === country).length} cats available in {country}</h4>
 
                 </Row>
                 <Col className="d-flex gap-2 flex-wrap justify-content-around mt-5">
-                    {cats.filter(cat => cat?.country_code === country).map((cat) => (
+                    {cats.filter(cat => cat?.origin === country).map((cat) => (
                         <CatCard key={cat.id} cats={cat} />
                     ))}
 
