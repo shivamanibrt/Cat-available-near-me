@@ -17,7 +17,6 @@ export const Home = () => {
         setCats(data);
     }
 
-    console.log(cats)
     return (
         <Container className="bg-black roudned shadow-lg p-5 text-light text-center mt-4 mb-4">
             <div>
